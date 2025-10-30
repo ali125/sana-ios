@@ -12,6 +12,7 @@
 		081368AE2EB364740052016E /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = 081368AD2EB364740052016E /* PostgREST */; };
 		081368B02EB364740052016E /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = 081368AF2EB364740052016E /* Realtime */; };
 		081368B22EB364740052016E /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = 081368B12EB364740052016E /* Storage */; };
+		08E2E23F2EB39E6100E73E46 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 08E2E23E2EB39E6100E73E46 /* Supabase */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 			files = (
 				081368AE2EB364740052016E /* PostgREST in Frameworks */,
 				081368AC2EB364740052016E /* Functions in Frameworks */,
+				08E2E23F2EB39E6100E73E46 /* Supabase in Frameworks */,
 				081368AA2EB364740052016E /* Auth in Frameworks */,
 				081368B22EB364740052016E /* Storage in Frameworks */,
 				081368B02EB364740052016E /* Realtime in Frameworks */,
@@ -46,6 +48,7 @@
 			isa = PBXGroup;
 			children = (
 				08B801B92EAA1135001D5AC0 /* Sana */,
+				08E2E23D2EB39E6100E73E46 /* Frameworks */,
 				08B801B82EAA1135001D5AC0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,6 +59,13 @@
 				08B801B72EAA1135001D5AC0 /* Sana.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		08E2E23D2EB39E6100E73E46 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +93,7 @@
 				081368AD2EB364740052016E /* PostgREST */,
 				081368AF2EB364740052016E /* Realtime */,
 				081368B12EB364740052016E /* Storage */,
+				08E2E23E2EB39E6100E73E46 /* Supabase */,
 			);
 			productName = Sana;
 			productReference = 08B801B72EAA1135001D5AC0 /* Sana.app */;
@@ -386,6 +397,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 081368A82EB364740052016E /* XCRemoteSwiftPackageReference "supabase-swift" */;
 			productName = Storage;
+		};
+		08E2E23E2EB39E6100E73E46 /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 081368A82EB364740052016E /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

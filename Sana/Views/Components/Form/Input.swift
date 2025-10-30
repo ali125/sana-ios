@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct Input: View {
+    @Binding var text: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TextField("Input field", text: $text)
     }
 }
 
 #Preview {
-    Input()
+    Input(text: .constant(""))
 }

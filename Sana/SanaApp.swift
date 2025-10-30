@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct SanaApp: App {
+   
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(SupabaseService.shared)
         }
     }
 }
