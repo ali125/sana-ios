@@ -8,11 +8,20 @@
 import SwiftUI
 
 struct FormHelper: View {
+    var message: String
+    var isInvalid: Bool = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Text(message)
+                .foregroundStyle(isInvalid ? .red : .gray)
+                .font(.caption)
+            
+            Spacer()
+        }
     }
 }
 
 #Preview {
-    FormHelper()
+    FormHelper(message: "Message")
 }

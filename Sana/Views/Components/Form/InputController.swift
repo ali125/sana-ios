@@ -7,19 +7,48 @@
 
 import SwiftUI
 
-enum Rules {
-    case required(String)
-    case minLength(Int, message: String?)
-    case maxLength(Int, message: String?)
-}
-
 
 struct InputController: View {
+    @ObservedObject var control: FormController
+    var name: String = ""
+    var label: String? = ""
+    var placeholder: String? = ""
+    var defaultValue: String? = ""
+    var helperMessage: String? = ""
+    var rules: [FormRule] = []
+
+    private var isInvalid: Bool {
+        control.getFieldError(name) != nil && control.isSubmitted
+    }
+    
+    private var errorMessage: String? {
+        control.isSubmitted ? control.getFieldError(name) : nil
+    }
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Input(
+            text: Binding(
+                get: { control.getFieldValue(name) },
+                set: { newValue in
+                    control.setFieldValue(name, newValue)
+                    control.validate(name, newValue, rules: rules)
+                }
+            ),
+            label: label,
+            placeholder: placeholder,
+            helperMessage: isInvalid ? errorMessage : helperMessage,
+            isInvalid: isInvalid
+        )
+        .onAppear {
+            control.setFieldValue(name, defaultValue ?? "")
+            control.validate(name, defaultValue ?? "", rules: rules)
+        }
     }
 }
 
 #Preview {
-    InputController()
+    InputController(
+        control: FormController(),
+        name: "mobile"
+    )
 }

@@ -8,12 +8,34 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var text = ""
+    @StateObject var formController = FormController()
+
+    func onSubmit() {
+        formController.handleSubmit { formData in
+            print(formData)
+        }
+    }
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            InputController(
+                control: formController,
+                name: "mobile",
+                label: "Mobile",
+                helperMessage: "Your mobile number",
+                rules: [
+                    .required("Please enter username"),
+                    .minLength(3, message: "Minimum length is 3"),
+                    .maxLength(10, message: "Maximum length is 10")
+                ]
+            )
+            .keyboardType(.numberPad)
+            
+            Button {
+                onSubmit()
+            } label: {
+                Text("Submit")
+            }
         }
         .padding()
     }

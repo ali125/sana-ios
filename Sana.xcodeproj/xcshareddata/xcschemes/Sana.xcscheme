@@ -52,8 +52,13 @@
       </BuildableProductRunnable>
       <EnvironmentVariables>
          <EnvironmentVariable
-            key = "API_BASE_URL"
-            value = "https://api.myapp.dev"
+            key = "SUPABASE_URL"
+            value = "https://mzjkjhbnzlxdqaucvwja.supabase.co"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "SUPABASE_KEY"
+            value = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im16amtqaGJuemx4ZHFhdWN2d2phIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE3NTM5OTgsImV4cCI6MjA3NzMyOTk5OH0.QgkScnqv-k_IYoW_SHGq3ODCMi3ua4cAIMaxH0V2grc"
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>

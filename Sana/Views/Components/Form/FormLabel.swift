@@ -8,11 +8,20 @@
 import SwiftUI
 
 struct FormLabel: View {
+    var label: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Text(label)
+                .font(.subheadline)
+                .fontWeight(.semibold)
+                .foregroundColor(Color.gray)
+            
+            Spacer()
+        }
     }
 }
 
 #Preview {
-    FormLabel()
+    FormLabel(label: "Label")
 }
